@@ -1,20 +1,8 @@
-version: '2.2'
-services:
-  sentinel1:
-    image: redis:6
-    container_name: redis-sentinel-1
-    ports:
-      - '26379:26379'
-    command: redis-server /etc/redis-config/redis.conf --sentinel
-    volumes:
-      - ./config/sentinel1:/etc/redis-config
-    networks:
-      - rdsentinel-network
-networks:
-  rdsentinel-network:
-    driver: bridge
-volumes:
-  sentinel_data:
-    name: redis-vl
-    driver: local
-    external: true
+version: '3.7'
+
+services:  
+  # Instance 1
+  redis-sentinel:
+    container_name: redis-sentinel
+    build: 
+      context: ./redis-sentinel

@@ -8,10 +8,17 @@ services:
       context: ./redis-sentinel
     ports:
       - '26379:26379'
-  # Instance 1
+  # Instance 2
   redis-sentinel-2:
     container_name: redis-sentinel-2
     build: 
       context: ./redis-sentinel
     ports:
       - '26380:26379'
+  # Instance 2
+  redis-sentinel-3:
+    container_name: redis-sentinel-3
+    build: 
+      context: ./redis-sentinel
+    ports:
+      - '26381:26379'

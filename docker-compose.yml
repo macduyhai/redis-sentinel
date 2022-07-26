@@ -14,4 +14,4 @@ services:
     build: 
       context: ./redis-sentinel
     ports:
-      - '26379:26379'
+      - '26380:26379'
